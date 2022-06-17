@@ -1,10 +1,12 @@
-name: github pages
+name: build-next-pages
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
   pull_request:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
   build-deploy:
