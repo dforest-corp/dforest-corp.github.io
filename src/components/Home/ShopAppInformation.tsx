@@ -1,4 +1,6 @@
 import Image from 'next/image'
+import Link from 'next/link'
+import {MdArrowForward} from 'react-icons/md'
 
 const ShopAppInformation = () => {
   return (
@@ -15,6 +17,16 @@ const ShopAppInformation = () => {
                className='rounded-lg shadow-lg'
                width={750}
                height={500} />
+      </div>
+      <div className='mt-8'>
+        <Link href='https://shop-de-appli.com'>
+          <a target='_blank' className='inline-flex flex-row items-center w-fit bg-indigo-700 hover:bg-white border border-indigo-700 text-white hover:text-indigo-700 px-6 py-2 shadow-lg transition rounded-full'>
+              <span className='tracking-wider text-lg'>
+                詳細はこちら
+              </span>
+            <MdArrowForward className='text-lg ml-2' />
+          </a>
+        </Link>
       </div>
     </div>
   )
