@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import {ReactNode} from 'react'
+import TreeItemText from './TreeItemText'
 
 type TreeItemRightProps = {
   src: string
@@ -9,14 +10,9 @@ type TreeItemRightProps = {
 
 const TreeItemRight = ({title, src, children}: TreeItemRightProps) => {
   return (
-    <div className='flex flex-col xl:flex-row items-center'>
-      <div className='flex-1'>
-        <h6 className='text-3xl font-bold xl:font-black tracking-wide'>{title}</h6>
-        <p className='mt-4 leading-relaxed'>
-          {children}
-        </p>
-      </div>
-      <div className='flex-1 ml-0 xl:ml-4 mt-4 xl:mt-0 text-center'>
+    <div className='flex flex-col md:flex-row items-center'>
+      <TreeItemText title={title}>{children}</TreeItemText>
+      <div className='flex-1 ml-0 md:ml-4 mt-4 md:mt-0 text-center'>
         <Image src={src}
                alt={title}
                className='rounded-md mx-auto'
