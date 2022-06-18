@@ -3,7 +3,7 @@ import DropDownMenu from './Home/DropDownMenu'
 
 const Header = () => {
   return (
-    <header className='p-6 flex flex-row'>
+    <header className='py-6 px-4 xl:px-0 flex flex-row max-w-screen-xl mx-auto'>
       <h1 className='text-3xl font-bold text-green-800 italic'>
         <Link href='/'>D-FOREST</Link>
       </h1>
