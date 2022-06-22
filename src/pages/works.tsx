@@ -17,9 +17,11 @@ const Works: NextPage<WorksProps> = ({post}) => {
       <Head>
         <title>事業内容 | D-FOREST</title>
       </Head>
-      <Header />
-      <WorksInformation post={post}/>
-      <Footer />
+      <div className='grid grid-cols-1 gap-20'>
+        <Header />
+        <WorksInformation post={post} />
+        <Footer />
+      </div>
     </>
   )
 }

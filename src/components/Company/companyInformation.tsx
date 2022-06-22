@@ -7,7 +7,7 @@ export type CompanyInformationProps = {
 
 const CompanyInformation = ({post}: CompanyInformationProps) => {
   return (
-    <div className='py-20'>
+    <div>
       <div className='max-w-screen-sm mx-auto px-4 xl:px-0'>
         <h2 className='text-3xl font-bold'>{post.title}</h2>
         <div className='mt-10 prose prose-blue max-w-none'>

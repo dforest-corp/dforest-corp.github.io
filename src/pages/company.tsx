@@ -18,10 +18,12 @@ const Company: NextPage<CompanyProps> = ({post}) => {
       <Head>
         <title>会社案内 | D-FOREST</title>
       </Head>
-      <Header />
-      <CompanyInformation post={post} />
-      <CompanyMap />
-      <Footer />
+      <div className='grid grid-cols-1 gap-20'>
+        <Header />
+        <CompanyInformation post={post} />
+        <CompanyMap />
+        <Footer />
+      </div>
     </>
   )
 }

@@ -1,6 +1,6 @@
 const CompanyMap = () => {
   return (
-    <div className='py-20'>
+    <div>
       <div className='max-w-screen-sm mx-auto px-4 xl:px-0'>
         <h2 className='text-3xl font-bold'>アクセス</h2>
         <iframe
