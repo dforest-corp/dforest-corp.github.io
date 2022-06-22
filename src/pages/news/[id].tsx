@@ -14,7 +14,7 @@ const NewsPage: NextPage<NewsPageProps> = ({news}) => {
   return (
     <>
       <Head>
-        <title>D-FOREST - {news.title}</title>
+        <title>{news.title} | D-FOREST</title>
       </Head>
       <article className='p-4'>
         <h2 className='text-3xl font-bold'>{news.title}</h2>

@@ -18,7 +18,7 @@ const Home: NextPage<HomeProps> = ({news}) => {
   return (
     <>
       <Head>
-        <title>D-FOREST - Creative Web and Smart phone application</title>
+        <title>D-FOREST | Creative Web and Smart phone application</title>
       </Head>
       <Header />
       <Introduction />

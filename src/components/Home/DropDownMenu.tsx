@@ -46,13 +46,13 @@ const DropDownMenu = () => {
           <Menu.Items
             className='absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'>
             <div className='px-1 py-1 '>
-              <DropDownMenuItem href='/'>
+              <DropDownMenuItem href='/company'>
                 会社案内
               </DropDownMenuItem>
-              <DropDownMenuItem href='/'>
+              <DropDownMenuItem href='/works'>
                 事業内容
               </DropDownMenuItem>
-              <DropDownMenuItem href='/'>
+              <DropDownMenuItem href='/contacts'>
                 お問い合せ
               </DropDownMenuItem>
             </div>

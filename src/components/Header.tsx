@@ -9,17 +9,17 @@ const Header = () => {
       </h1>
       <ul className='hidden md:flex flex-row ml-auto space-x-6 text-lg text-gray-800'>
         <li>
-          <Link href=''>
+          <Link href='/company'>
             会社案内
           </Link>
         </li>
         <li>
-          <Link href=''>
+          <Link href='/works'>
             事業内容
           </Link>
         </li>
         <li>
-          <Link href=''>
+          <Link href='/contacts'>
             お問い合わせ
           </Link>
         </li>
