@@ -10,7 +10,7 @@ const formSchema = z.object({
   name: z.string().min(1, 'お名前を入力してください。').max(60, '60文字以内で入力してください。'),
   email: z.string().email('正しいメールアドレスを入力してください。'),
   title: z.string(),
-  message: z.string().min(1, 'お問合せ内容を入力してください。').max(4000, '4000文字以内で入力してください。')
+  message: z.string().min(1, 'お問い合せ内容を入力してください。').max(4000, '4000文字以内で入力してください。')
 })
 
 type FormSchemaType = z.infer<typeof formSchema>

@@ -32,7 +32,7 @@ const ContactForm = () => {
             <FormError error={errors.title} />
           </div>
           <div>
-            <label>お問合せ内容</label>
+            <label>お問い合せ内容</label>
             <textarea
               {...register('message')}
               className='mt-2 block w-full rounded shadow border-gray-300 resize-none'
