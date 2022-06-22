@@ -1,10 +1,12 @@
 import {GetStaticPaths, GetStaticProps, NextPage} from 'next'
 import Head from 'next/head'
 import DOMPurify from 'isomorphic-dompurify'
-import parse from 'html-react-parser';
-import {getNewsIdList} from '../../api/getNewsList'
-import {EndPoints} from '../../types/cms-types'
-import {getNewsDetail} from '../../api/getNewsDetail'
+import {getNewsIdList} from '@/api/getNewsList'
+import {EndPoints} from '@/types/cms-types'
+import {getNewsDetail} from '@/api/getNewsDetail'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
+import NewsView from '@/components/News/newsView'
 
 type NewsPageProps = {
   news: EndPoints['get']['news']
@@ -16,10 +18,11 @@ const NewsPage: NextPage<NewsPageProps> = ({news}) => {
       <Head>
         <title>{news.title} | D-FOREST</title>
       </Head>
-      <article className='p-4'>
-        <h2 className='text-3xl font-bold'>{news.title}</h2>
-        <div className='mt-4 prose prose-blue'>{parse(news.content)}</div>
-      </article>
+      <div className='grid grid-cols-1 gap-20'>
+        <Header />
+        <NewsView news={news} />
+        <Footer />
+      </div>
     </>
   )
 }
