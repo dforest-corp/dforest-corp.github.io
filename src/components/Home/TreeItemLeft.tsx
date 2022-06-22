@@ -37,6 +37,7 @@ const TreeItemLeft = ({src, title, children}: TreeItemLeftProps) => {
         <div className='flex-1 mr-0 md:mr-4 mt-4 md:mt-0  text-center'>
           <Image src={src}
                  alt={title}
+                 unoptimized
                  className='rounded-md mx-auto'
                  objectFit='cover'
                  width={512}

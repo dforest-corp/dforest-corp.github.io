@@ -27,7 +27,7 @@ const Introduction = () => {
         </p>
       </div>
       <div className='absolute right-0 top-0 bottom-0 w-1/2 hidden md:block'>
-        <Image src='/images/p0.png' layout='fill' objectFit='contain'/>
+        <Image src='/images/p0.png' layout='fill' objectFit='contain' unoptimized/>
       </div>
     </div>
   )

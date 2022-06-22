@@ -37,6 +37,7 @@ const ShopAppInformation = () => {
           animate={control}
           variants={boxVariant}>
           <Image src='/images/shop-app.webp'
+                 unoptimized
                  alt='ショップdeアプリ'
                  className='rounded-lg shadow-lg'
                  width={750}

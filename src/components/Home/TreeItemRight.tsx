@@ -37,6 +37,7 @@ const TreeItemRight = ({title, src, children}: TreeItemRightProps) => {
         <TreeItemText title={title}>{children}</TreeItemText>
         <div className='flex-1 ml-0 md:ml-4 mt-4 md:mt-0 text-center'>
           <Image src={src}
+                 unoptimized
                  alt={title}
                  className='rounded-md mx-auto'
                  objectFit='cover'
