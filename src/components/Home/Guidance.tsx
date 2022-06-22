@@ -22,7 +22,7 @@ const Guidance = () => {
   return (
     <div ref={ref}>
       <motion.p
-        className='text-center max-w-screen-md mx-auto py-20 tracking-wider leading-loose text-lg font-semibold'
+        className='text-center max-w-screen-md mx-auto px-2 md:px-0 py-20 tracking-wider leading-loose text-lg font-semibold'
         animate={control}
         initial={'hidden'}
         variants={boxVariant}>
