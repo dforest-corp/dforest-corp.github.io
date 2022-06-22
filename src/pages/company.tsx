@@ -6,6 +6,7 @@ import {EndPoints} from '@/types/cms-types'
 import DOMPurify from 'isomorphic-dompurify'
 import CompanyInformation from '@/components/Company/companyInformation'
 import Footer from '@/components/Footer'
+import CompanyMap from '@/components/Company/companyMap'
 
 type CompanyProps = {
   post: EndPoints['get']['news']
@@ -19,6 +20,7 @@ const Company: NextPage<CompanyProps> = ({post}) => {
       </Head>
       <Header />
       <CompanyInformation post={post} />
+      <CompanyMap />
       <Footer />
     </>
   )
