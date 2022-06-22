@@ -9,6 +9,7 @@ import ServiceTree from '../components/Home/ServiceTree'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import NewsList from '../components/Home/NewsList'
+import BottomContactGuide from '@/components/Home/bottomContactGuide'
 
 type HomeProps = {
   news: EndPoints['gets']['news']
@@ -26,6 +27,7 @@ const Home: NextPage<HomeProps> = ({news}) => {
       <Guidance />
       <ServiceTree />
       <NewsList items={news.contents} />
+      <BottomContactGuide />
       <Footer />
     </>
   )

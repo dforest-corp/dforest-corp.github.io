@@ -10,7 +10,7 @@ const NewsList = ({items}: NewsListProps) => {
   return (
     <div className='pt-40 pb-20'>
       <h3 className='text-center font-bold xl:font-black tracking-wider text-3xl'>お知らせ</h3>
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-20'>
+      <div className='max-w-screen-xl mx-auto px-2 xl:px-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-20'>
         {items.map(content => (
           <div key={content.id} className='text-center'>
             <Link href={`/news/${content.id}`}>
