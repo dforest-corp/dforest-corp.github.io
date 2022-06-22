@@ -1,4 +1,4 @@
-import ky from 'ky'
+import ky from 'ky-universal'
 
 export const client = ky.create({
   prefixUrl: 'https://dforest.microcms.io/api/v1/',
