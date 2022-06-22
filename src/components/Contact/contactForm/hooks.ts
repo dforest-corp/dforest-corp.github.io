@@ -4,6 +4,7 @@ import {zodResolver} from '@hookform/resolvers/zod'
 import {useEffect, useMemo} from 'react'
 import {useForm as useFormSpree} from '@formspree/react'
 import {useRouter} from 'next/router'
+import {toast} from 'react-toastify'
 
 const formSchema = z.object({
   name: z.string().min(1, 'お名前を入力してください。').max(60, '60文字以内で入力してください。'),
@@ -24,13 +25,14 @@ export const useContactFormHook = () => {
   const handleSubmitForm = useMemo(() => handleSubmit(onSubmit), [handleSubmit, onSubmit])
 
   useEffect(() => {
-    if (sendError) {
-      console.log(sendError)
+    if (sendError.length) {
+      toast.error('お問い合わせを送信できませんでした。しばらく経ってから再度やり直してください。')
     }
   }, [sendError])
 
   useEffect(() => {
     if (succeeded) {
+      toast.success('お問い合わせを送信しました。')
       router.push('/').catch(console.log)
     }
   }, [router, succeeded])
