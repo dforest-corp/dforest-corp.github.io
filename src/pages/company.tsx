@@ -1,12 +1,12 @@
 import type {GetStaticProps, NextPage} from 'next'
 import Header from '../components/Header'
-import Head from 'next/head'
 import {getCompanyPost} from '@/api/getNewsList'
 import {EndPoints} from '@/types/cms-types'
 import DOMPurify from 'isomorphic-dompurify'
 import CompanyInformation from '@/components/Company/companyInformation'
 import Footer from '@/components/Footer'
 import CompanyMap from '@/components/Company/companyMap'
+import {NextSeo} from 'next-seo'
 
 type CompanyProps = {
   post: EndPoints['get']['news']
@@ -15,9 +15,10 @@ type CompanyProps = {
 const Company: NextPage<CompanyProps> = ({post}) => {
   return (
     <>
-      <Head>
-        <title>会社案内 | D-FOREST</title>
-      </Head>
+      <NextSeo
+        title={'会社案内 | D-FOREST'}
+        description={'株式会社ディー・フォレストの会社案内です。'}
+      />
       <div className='grid grid-cols-1 gap-20'>
         <Header />
         <CompanyInformation post={post} />

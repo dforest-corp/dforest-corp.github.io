@@ -1,5 +1,4 @@
 import {GetStaticPaths, GetStaticProps, NextPage} from 'next'
-import Head from 'next/head'
 import DOMPurify from 'isomorphic-dompurify'
 import {getNewsIdList} from '@/api/getNewsList'
 import {EndPoints} from '@/types/cms-types'
@@ -7,6 +6,7 @@ import {getNewsDetail} from '@/api/getNewsDetail'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import NewsView from '@/components/News/newsView'
+import {NextSeo} from 'next-seo'
 
 type NewsPageProps = {
   news: EndPoints['get']['news']
@@ -15,9 +15,9 @@ type NewsPageProps = {
 const NewsPage: NextPage<NewsPageProps> = ({news}) => {
   return (
     <>
-      <Head>
-        <title>{news.title} | D-FOREST</title>
-      </Head>
+      <NextSeo
+        title={`${news.title} | D-FOREST`}
+      />
       <div className='grid grid-cols-1 gap-20'>
         <Header />
         <NewsView news={news} />

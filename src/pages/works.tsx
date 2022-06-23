@@ -1,11 +1,11 @@
 import type {GetStaticProps, NextPage} from 'next'
-import Head from 'next/head'
 import Header from '@/components/Header'
 import {EndPoints} from '@/types/cms-types'
 import {getWorksPost} from '@/api/getNewsList'
 import DOMPurify from 'isomorphic-dompurify'
 import Footer from '@/components/Footer'
 import WorksInformation from '@/components/Works/worksInformation'
+import {NextSeo} from 'next-seo'
 
 type WorksProps = {
   post: EndPoints['get']['news']
@@ -14,9 +14,10 @@ type WorksProps = {
 const Works: NextPage<WorksProps> = ({post}) => {
   return (
     <>
-      <Head>
-        <title>事業内容 | D-FOREST</title>
-      </Head>
+      <NextSeo
+        title={'事業案内 | D-FOREST'}
+        description={'株式会社ディー・フォレストの事業案内です。'}
+      />
       <div className='grid grid-cols-1 gap-20'>
         <Header />
         <WorksInformation post={post} />
