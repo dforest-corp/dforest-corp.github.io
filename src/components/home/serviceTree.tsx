@@ -1,5 +1,5 @@
-import TreeItemRight from './TreeItemRight'
-import TreeItemLeft from './TreeItemLeft'
+import TreeItemRight from './treeItemRight'
+import TreeItemLeft from './treeItemLeft'
 import Tree1Lottie from '@/components/home/tree1Lottie'
 import Tree2Lottie from '@/components/home/tree2Lottie'
 import Tree3Lottie from '@/components/home/tree3Lottie'

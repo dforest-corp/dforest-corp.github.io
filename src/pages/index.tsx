@@ -1,15 +1,15 @@
 import type {GetStaticProps, NextPage} from 'next'
 import {NextSeo} from 'next-seo'
 import {EndPoints} from '@/types/cms-types'
-import Header from '../components/common/Header'
-import Introduction from '../components/home/Introduction'
-import ShopAppInformation from '../components/home/ShopAppInformation'
-import Guidance from '../components/home/Guidance'
-import ServiceTree from '../components/home/ServiceTree'
-import NewsList from '../components/home/NewsList'
+import Header from '../components/common/header'
+import ShopAppInformation from '../components/home/shopAppInformation'
+import Guidance from '../components/home/guidance'
+import ServiceTree from '../components/home/serviceTree'
+import NewsList from '../components/home/newsList'
 import BottomContactGuide from '@/components/home/bottomContactGuide'
-import Footer from '../components/common/Footer'
+import Footer from '../components/common/footer'
 import {getNewsList} from '@/api/getNewsList'
+import Introduction from '@/components/home/introduction'
 
 type HomeProps = {
   news: EndPoints['gets']['news']

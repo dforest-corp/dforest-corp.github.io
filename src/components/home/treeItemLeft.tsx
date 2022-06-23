@@ -1,5 +1,5 @@
 import {ReactNode, useEffect} from 'react'
-import TreeItemText from './TreeItemText'
+import TreeItemText from './treeItemText'
 import {motion, useAnimation} from 'framer-motion'
 import {useInView} from 'react-intersection-observer'
 

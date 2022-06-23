@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import DropDownMenu from '../home/DropDownMenu'
+import DropDownMenu from '../home/dropDownMenu'
 
 const Header = () => {
   return (

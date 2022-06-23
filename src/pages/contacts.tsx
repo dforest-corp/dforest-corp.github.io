@@ -1,6 +1,6 @@
 import type {NextPage} from 'next'
-import Header from '@/components/common/Header'
-import Footer from '@/components/common/Footer'
+import Header from '@/components/common/header'
+import Footer from '@/components/common/footer'
 import ContactTel from '@/components/contact/contactTel'
 import ContactForm from '@/components/contact/contactForm'
 import {NextSeo} from 'next-seo'
