@@ -2,14 +2,14 @@ import type {GetStaticProps, NextPage} from 'next'
 import {NextSeo} from 'next-seo'
 import {EndPoints} from '@/types/cms-types'
 import Header from '../components/common/header'
+import Introduction from '@/components/home/introduction'
 import ShopAppInformation from '../components/home/shopAppInformation'
 import Guidance from '../components/home/guidance'
 import ServiceTree from '../components/home/serviceTree'
 import NewsList from '../components/home/newsList'
 import BottomContactGuide from '@/components/home/bottomContactGuide'
 import Footer from '../components/common/footer'
-import {getNewsList} from '@/api/getNewsList'
-import Introduction from '@/components/home/introduction'
+import NewsListAPI from '@/api/newsList'
 
 type HomeProps = {
   news: EndPoints['gets']['news']
@@ -35,10 +35,10 @@ const Home: NextPage<HomeProps> = ({news}) => {
 }
 
 export const getStaticProps: GetStaticProps<HomeProps> = async (context) => {
-  const data = await getNewsList()
+  const news = await NewsListAPI.fetchList()
   return {
     props: {
-      news: data
+      news
     }
   }
 }

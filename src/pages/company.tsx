@@ -5,8 +5,7 @@ import Header from '@/components/common/header'
 import CompanyInformation from '@/components/company/companyInformation'
 import CompanyMap from '@/components/company/companyMap'
 import Footer from '@/components/common/footer'
-import {getCompanyPost} from '@/api/getNewsDetail'
-import {sanitizePost} from '@/utils/sanitizePost'
+import PostAPI from '@/api/post'
 
 type CompanyProps = {
   post: EndPoints['get']['news']
@@ -30,11 +29,11 @@ const Company: NextPage<CompanyProps> = ({post}) => {
 }
 
 export const getStaticProps: GetStaticProps<CompanyProps> = async () => {
-  const post = await getCompanyPost()
+  const post = await PostAPI.fetchCompany()
 
   return {
     props: {
-      post: sanitizePost(post)
+      post
     }
   }
 }

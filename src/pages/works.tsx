@@ -4,8 +4,7 @@ import {EndPoints} from '@/types/cms-types'
 import Header from '@/components/common/header'
 import WorksInformation from '@/components/works/worksInformation'
 import Footer from '@/components/common/footer'
-import {getWorksPost} from '@/api/getNewsDetail'
-import {sanitizePost} from '@/utils/sanitizePost'
+import PostAPI from '@/api/post'
 
 type WorksProps = {
   post: EndPoints['get']['news']
@@ -28,11 +27,11 @@ const Works: NextPage<WorksProps> = ({post}) => {
 }
 
 export const getStaticProps: GetStaticProps<WorksProps> = async () => {
-  const post = await getWorksPost()
+  const post = await PostAPI.fetchWork()
 
   return {
     props: {
-      post: sanitizePost(post)
+      post
     }
   }
 }

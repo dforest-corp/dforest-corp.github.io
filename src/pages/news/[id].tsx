@@ -1,12 +1,11 @@
 import {GetStaticPaths, GetStaticProps, NextPage} from 'next'
 import {NextSeo} from 'next-seo'
-import {getNewsIdList} from '@/api/getNewsList'
 import {EndPoints} from '@/types/cms-types'
-import {getNewsDetail} from '@/api/getNewsDetail'
 import Header from '@/components/common/header'
-import Footer from '@/components/common/footer'
 import NewsView from '@/components/news/newsView'
-import {sanitizePost} from '@/utils/sanitizePost'
+import Footer from '@/components/common/footer'
+import NewsListAPI from '@/api/newsList'
+import NewsDetailAPI from '@/api/newsDetail'
 
 type NewsPageProps = {
   news: EndPoints['get']['news']
@@ -28,13 +27,9 @@ const NewsPage: NextPage<NewsPageProps> = ({news}) => {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const news = await getNewsIdList()
+  const paths = await NewsListAPI.fetchIdPaths()
   return {
-    paths: news.contents.map(item => ({
-      params: {
-        id: item.id
-      }
-    })),
+    paths,
     fallback: false
   }
 }
@@ -45,10 +40,10 @@ export const getStaticProps: GetStaticProps<NewsPageProps, {id: string}> = async
       notFound: true
     }
   }
-  const news = await getNewsDetail(params.id)
+  const news = await NewsDetailAPI.fetch(params.id)
   return {
     props: {
-      news: sanitizePost(news)
+      news
     }
   }
 }
