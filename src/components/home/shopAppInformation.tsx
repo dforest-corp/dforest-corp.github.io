@@ -13,7 +13,6 @@ const boxVariant = {
 const ShopAppInformation = () => {
   const control = useAnimation()
   const [ref, inView] = useInView({
-    rootMargin: '-100px',
     triggerOnce: true
   })
   useEffect(() => {
