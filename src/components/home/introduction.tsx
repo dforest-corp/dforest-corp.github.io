@@ -9,7 +9,7 @@ const MediaQuery = dynamic(() => import('react-responsive'), {
 
 const Introduction = () => {
   return (
-    <div className='relative'>
+    <div className='md:relative'>
       <div className='max-w-screen-xl mx-auto px-4 xl:px-0 py-20 xl:py-40'>
         <h2
           className='text-2xl lg:text-5xl leading-normal lg:leading-relaxed font-bold xl:font-black tracking-wider'>
