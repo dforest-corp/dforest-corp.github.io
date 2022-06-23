@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import {DateTime} from 'luxon'
-import {EndPoints} from '@/types/cms-types'
+import {EndPoints} from '@/types/cmsType'
 
 type NewsListProps = {
   items: EndPoints['gets']['news']['contents']

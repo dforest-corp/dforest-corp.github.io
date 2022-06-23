@@ -1,5 +1,5 @@
 import parse from 'html-react-parser'
-import {EndPoints} from '@/types/cms-types'
+import {EndPoints} from '@/types/cmsType'
 
 type NewsViewProps = {
   news: EndPoints['get']['news']

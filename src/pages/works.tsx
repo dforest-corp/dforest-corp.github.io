@@ -1,6 +1,6 @@
 import type {GetStaticProps, NextPage} from 'next'
 import {NextSeo} from 'next-seo'
-import {EndPoints} from '@/types/cms-types'
+import {EndPoints} from '@/types/cmsType'
 import Header from '@/components/common/header'
 import WorksInformation from '@/components/works/worksInformation'
 import Footer from '@/components/common/footer'

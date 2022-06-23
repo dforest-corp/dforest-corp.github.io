@@ -1,5 +1,5 @@
 import {client} from '@/dataSource/client'
-import {EndPoints} from '@/types/cms-types'
+import {EndPoints} from '@/types/cmsType'
 
 const NewsListAPI = {
   fetchList: async () => {

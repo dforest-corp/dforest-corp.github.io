@@ -1,4 +1,4 @@
-import {EndPoints} from '@/types/cms-types'
+import {EndPoints} from '@/types/cmsType'
 import DOMPurify from 'isomorphic-dompurify'
 
 export const sanitizePost = (post: EndPoints['get']['news']) => {

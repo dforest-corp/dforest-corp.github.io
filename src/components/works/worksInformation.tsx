@@ -1,4 +1,4 @@
-import {EndPoints} from '@/types/cms-types'
+import {EndPoints} from '@/types/cmsType'
 import parse from 'html-react-parser'
 
 type WorksInformationProps = {
