@@ -2,7 +2,7 @@ import {ReactNode, useEffect} from 'react'
 import TreeItemText from './treeItemText'
 import {motion, useAnimation} from 'framer-motion'
 import {useInView} from 'react-intersection-observer'
-import Lottie from 'react-lottie'
+import TreeLottie from '@/components/home/treeLottie'
 
 const boxVariant = {
   visible: {opacity: 1, x: 0, transition: {duration: 0.5}},
@@ -10,12 +10,12 @@ const boxVariant = {
 }
 
 type TreeItemRightProps = {
-  Lottie: () => JSX.Element
+  lottiePath: string
   title: string
   children: ReactNode
 }
 
-const TreeItemRight = ({title, Lottie, children}: TreeItemRightProps) => {
+const TreeItemRight = ({title, lottiePath, children}: TreeItemRightProps) => {
   const control = useAnimation()
   const [ref, inView] = useInView({
     rootMargin: '-20%',
@@ -36,7 +36,7 @@ const TreeItemRight = ({title, Lottie, children}: TreeItemRightProps) => {
         variants={boxVariant}>
         <TreeItemText title={title}>{children}</TreeItemText>
         <div className='flex-1 ml-0 md:ml-4 mt-4 md:mt-0 text-center'>
-          <Lottie />
+          <TreeLottie animationPath={lottiePath} />
         </div>
       </motion.div>
     </div>

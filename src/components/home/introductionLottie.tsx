@@ -1,7 +1,8 @@
 import Lottie, {Options} from 'react-lottie'
-import {useEffect, useMemo, useState} from 'react'
+import {memo, useEffect, useMemo, useState} from 'react'
+import ky from 'ky-universal'
 
-const IntroductionLottie = () => {
+const IntroductionLottie = memo(() => {
   const [animationData, setAnimationData] = useState<any>()
 
   const defaultOptions = useMemo((): Options => ({
@@ -14,7 +15,7 @@ const IntroductionLottie = () => {
   }), [animationData])
 
   useEffect(() => {
-    import('@/lottie/intro.json').then(setAnimationData)
+    ky.get('/lottie/intro.json').json<any>().then(setAnimationData)
   }, [])
 
   if (animationData === undefined) {
@@ -26,6 +27,7 @@ const IntroductionLottie = () => {
             isClickToPauseDisabled
             style={{cursor: 'default', maxWidth: 1000}} />
   )
-}
+})
+IntroductionLottie.displayName = 'IntroductionLottie'
 
 export default IntroductionLottie
