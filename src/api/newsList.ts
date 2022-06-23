@@ -1,9 +1,9 @@
-import {client} from '@/dataSource/client'
+import cmsClient from '@/dataSource/cmsClient'
 import {EndPoints} from '@/types/cmsType'
 
 const NewsListAPI = {
   fetchList: async () => {
-    return client.get('news', {
+    return cmsClient.get('news', {
       searchParams: {
         filters: `category[equals]${process.env.NOTICE_CATEGORY_ID}`,
         fields: `id,title,publishedAt`
@@ -11,7 +11,7 @@ const NewsListAPI = {
     }).json<EndPoints['gets']['news']>()
   },
   fetchIdPaths: async () => {
-    const news = await client.get('news', {
+    const news = await cmsClient.get('news', {
       searchParams: {
         filters: `category[equals]${process.env.NOTICE_CATEGORY_ID}`,
         fields: `id`,
