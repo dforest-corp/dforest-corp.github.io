@@ -1,6 +1,7 @@
 import Link from 'next/link'
-import {DateTime} from 'luxon'
 import {EndPoints} from '@/types/cmsType'
+import ForEach from '@/components/common/ForEach'
+import {formatDateTime} from '@/utils/formatDateTime'
 
 type NewsListProps = {
   items: EndPoints['gets']['news']['contents']
@@ -8,19 +9,25 @@ type NewsListProps = {
 
 const NewsList = ({items}: NewsListProps) => {
   return (
-    <div className='pt-40 pb-20'>
+    <div className='pb-20 grid gap-20'>
       <h3 className='text-center font-bold xl:font-black tracking-wider text-3xl'>お知らせ</h3>
-      <div className='max-w-screen-xl mx-auto px-2 xl:px-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-20'>
-        {items.map(content => (
-          <div key={content.id} className='text-center'>
-            <Link href={`/news/${content.id}`}>
-              <a className='font-bold' title={content.title}>
-                {content.title}
-              </a>
-            </Link>
-            <p className='mt-1'>{DateTime.fromISO(content.publishedAt).toFormat('yyyy年LL月dd日')}</p>
+      <div className='w-full'>
+        <div className='max-w-screen-xl mx-auto px-2 xl:px-0'>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+            <ForEach items={items}>
+              {item => (
+                <div key={item.id} className='text-center grid gap-1'>
+                  <Link href={`/news/${item.id}`}>
+                    <a className='font-bold' title={item.title}>
+                      {item.title}
+                    </a>
+                  </Link>
+                  <p>{formatDateTime(item.publishedAt)}</p>
+                </div>
+              )}
+            </ForEach>
           </div>
-        ))}
+        </div>
       </div>
     </div>
   )
