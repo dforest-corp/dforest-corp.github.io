@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import {MdArrowForward} from 'react-icons/md'
-import Image from 'next/image'
 import IntroductionLottie from '@/components/Home/introductionLottie'
 
 const Introduction = () => {
