@@ -1,12 +1,12 @@
 import {GetStaticPaths, GetStaticProps, NextPage} from 'next'
-import DOMPurify from 'isomorphic-dompurify'
+import {NextSeo} from 'next-seo'
 import {getNewsIdList} from '@/api/getNewsList'
 import {EndPoints} from '@/types/cms-types'
 import {getNewsDetail} from '@/api/getNewsDetail'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import NewsView from '@/components/News/newsView'
-import {NextSeo} from 'next-seo'
+import {sanitizePost} from '@/utils/sanitizePost'
 
 type NewsPageProps = {
   news: EndPoints['get']['news']
@@ -48,14 +48,7 @@ export const getStaticProps: GetStaticProps<NewsPageProps, {id: string}> = async
   const news = await getNewsDetail(params.id)
   return {
     props: {
-      news: {
-        ...news,
-        content: DOMPurify.sanitize(news.content, {
-          ADD_ATTR: [
-            'target'
-          ]
-        })
-      }
+      news: sanitizePost(news)
     }
   }
 }

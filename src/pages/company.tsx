@@ -1,12 +1,12 @@
 import type {GetStaticProps, NextPage} from 'next'
-import Header from '../components/Header'
-import {EndPoints} from '@/types/cms-types'
-import DOMPurify from 'isomorphic-dompurify'
-import CompanyInformation from '@/components/Company/companyInformation'
-import Footer from '@/components/Footer'
-import CompanyMap from '@/components/Company/companyMap'
 import {NextSeo} from 'next-seo'
+import {EndPoints} from '@/types/cms-types'
+import Header from '../components/Header'
+import CompanyInformation from '@/components/Company/companyInformation'
+import CompanyMap from '@/components/Company/companyMap'
+import Footer from '@/components/Footer'
 import {getCompanyPost} from '@/api/getNewsDetail'
+import {sanitizePost} from '@/utils/sanitizePost'
 
 type CompanyProps = {
   post: EndPoints['get']['news']
@@ -34,14 +34,7 @@ export const getStaticProps: GetStaticProps<CompanyProps> = async () => {
 
   return {
     props: {
-      post: {
-        ...post,
-        content: DOMPurify.sanitize(post.content, {
-          ADD_ATTR: [
-            'target'
-          ]
-        })
-      }
+      post: sanitizePost(post)
     }
   }
 }
