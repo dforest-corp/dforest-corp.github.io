@@ -32,7 +32,7 @@ const DropDownMenu = () => {
   return (
     <div className='block md:hidden ml-auto flex items-center'>
       <Menu>
-        <Menu.Button className='focus:outline-none focus-visible:ring-0'>
+        <Menu.Button className='focus:outline-none focus-visible:ring-0' aria-label='メニュー'>
           <MdMenu size={30} />
         </Menu.Button>
         <Transition
