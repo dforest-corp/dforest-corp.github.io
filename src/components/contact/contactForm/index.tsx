@@ -6,7 +6,7 @@ const ContactForm = () => {
   const {register, handleSubmitForm, errors} = useContactFormHook()
   return (
     <ReaderLayout>
-      <form className='grid grid-cols-1 gap-4' onSubmit={handleSubmitForm}>
+      <form className='grid gap-4' onSubmit={handleSubmitForm}>
         <div>
           <label>お名前 (必須)</label>
           <input
@@ -41,7 +41,7 @@ const ContactForm = () => {
         </div>
         <button
           type='submit'
-          className='mt-8 bg-emerald-900 text-white text-lg p-4 rounded'>
+          className='bg-emerald-900 text-white text-lg p-4 rounded'>
           送信
         </button>
       </form>
