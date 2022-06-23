@@ -1,6 +1,7 @@
 import type {GetStaticProps, NextPage} from 'next'
 import {NextSeo} from 'next-seo'
 import {EndPoints} from '@/types/cmsType'
+import TreeLottiePrefetch from '@/components/home/treeLottiePrefetch'
 import Header from '../components/common/header'
 import Introduction from '@/components/home/introduction'
 import ShopAppInformation from '../components/home/shopAppInformation'
@@ -18,6 +19,7 @@ type HomeProps = {
 const Home: NextPage<HomeProps> = ({news}) => {
   return (
     <>
+      <TreeLottiePrefetch />
       <NextSeo
         title={'D-FOREST | Creative Web and Smart phone application'}
         description={'スマホアプリ・ホームページを制作します。スマートフォンへの対応もおまかせください。'}

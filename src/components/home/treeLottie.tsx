@@ -1,6 +1,8 @@
 import {memo, useEffect, useMemo, useState} from 'react'
 import Lottie, {Options} from 'react-lottie'
 import ky from 'ky-universal'
+import {useInView} from 'react-intersection-observer'
+import MayBe from '@/components/common/MayBe'
 
 export type TreeLottieProps = {
   animationPath: any
@@ -9,9 +11,15 @@ export type TreeLottieProps = {
 const TreeLottie = memo(({animationPath}: TreeLottieProps) => {
   const [animationData, setAnimationData] = useState<any>()
 
+  const [ref, inView] = useInView({
+    triggerOnce: true
+  })
+
   useEffect(() => {
-    ky.get(animationPath).json<any>().then(setAnimationData)
-  }, [animationPath])
+    if (inView) {
+      ky.get(animationPath).json<any>().then(setAnimationData)
+    }
+  }, [animationPath, inView])
 
   const defaultOptions = useMemo((): Options => ({
     loop: true,
@@ -22,14 +30,14 @@ const TreeLottie = memo(({animationPath}: TreeLottieProps) => {
     }
   }), [animationData])
 
-  if (animationData === undefined) {
-    return <></>
-  }
-
   return (
-    <Lottie options={defaultOptions}
-            isClickToPauseDisabled
-            style={{cursor: 'default', maxWidth: 1000}} />
+    <div ref={ref}>
+      <MayBe test={animationData !== undefined}>
+        <Lottie options={defaultOptions}
+                isClickToPauseDisabled
+                style={{cursor: 'default', maxWidth: 1000}} />
+      </MayBe>
+    </div>
   )
 })
 TreeLottie.displayName = 'TreeLottie'
