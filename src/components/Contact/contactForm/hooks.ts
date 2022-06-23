@@ -1,10 +1,10 @@
-import {z} from 'zod'
-import {useForm} from 'react-hook-form'
-import {zodResolver} from '@hookform/resolvers/zod'
 import {useEffect, useMemo} from 'react'
-import {useForm as useFormSpree} from '@formspree/react'
 import {useRouter} from 'next/router'
 import {toast} from 'react-toastify'
+import {useForm} from 'react-hook-form'
+import {zodResolver} from '@hookform/resolvers/zod'
+import {useForm as useFormSpree} from '@formspree/react'
+import {z} from 'zod'
 
 const formSchema = z.object({
   name: z.string().min(1, 'お名前を入力してください。').max(60, '60文字以内で入力してください。'),
@@ -16,7 +16,7 @@ const formSchema = z.object({
 type FormSchemaType = z.infer<typeof formSchema>
 
 export const useContactFormHook = () => {
-  const [{submitting, succeeded, errors: sendError}, onSubmit] = useFormSpree(process.env.NEXT_PUBLIC_FORM_KEY ?? '')
+  const [{submitting, succeeded, errors: sendError}, onSubmit] = useFormSpree(`${process.env.NEXT_PUBLIC_FORM_KEY}`)
   const {register, handleSubmit, formState: {errors}} = useForm<FormSchemaType>({
     resolver: zodResolver(formSchema)
   })

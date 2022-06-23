@@ -1,11 +1,11 @@
 import type {GetStaticProps, NextPage} from 'next'
 import Header from '@/components/Header'
 import {EndPoints} from '@/types/cms-types'
-import {getWorksPost} from '@/api/getNewsList'
 import DOMPurify from 'isomorphic-dompurify'
 import Footer from '@/components/Footer'
 import WorksInformation from '@/components/Works/worksInformation'
 import {NextSeo} from 'next-seo'
+import {getWorksPost} from '@/api/getNewsDetail'
 
 type WorksProps = {
   post: EndPoints['get']['news']

@@ -1,12 +1,12 @@
 import type {GetStaticProps, NextPage} from 'next'
 import Header from '../components/Header'
-import {getCompanyPost} from '@/api/getNewsList'
 import {EndPoints} from '@/types/cms-types'
 import DOMPurify from 'isomorphic-dompurify'
 import CompanyInformation from '@/components/Company/companyInformation'
 import Footer from '@/components/Footer'
 import CompanyMap from '@/components/Company/companyMap'
 import {NextSeo} from 'next-seo'
+import {getCompanyPost} from '@/api/getNewsDetail'
 
 type CompanyProps = {
   post: EndPoints['get']['news']
