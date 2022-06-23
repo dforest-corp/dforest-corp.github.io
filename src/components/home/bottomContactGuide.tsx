@@ -15,7 +15,7 @@ const BottomContactGuide = () => {
         <p className='mt-8'>
           <Link href='/contacts'>
             <a
-              className='flex flex-row items-center w-fit bg-green-700 hover:bg-white border border-green-700 text-white hover:text-green-700 px-4 py-3 shadow-lg transition rounded-full'>
+              className='inline-flex flex-row items-center bg-green-700 hover:bg-white border border-green-700 text-white hover:text-green-700 px-4 py-3 shadow-lg transition rounded-full'>
               <span className='tracking-wider text-lg'>
                 お問い合せフォームへ
               </span>

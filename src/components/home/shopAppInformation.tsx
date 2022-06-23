@@ -47,7 +47,7 @@ const ShopAppInformation = () => {
       <div className='mt-8'>
         <Link href='https://shop-de-appli.com'>
           <a target='_blank'
-             className='inline-flex flex-row items-center w-fit bg-indigo-700 hover:bg-white border border-indigo-700 text-white hover:text-indigo-700 px-6 py-2 shadow-lg transition rounded-full'>
+             className='inline-flex flex-row items-center bg-indigo-700 hover:bg-white border border-indigo-700 text-white hover:text-indigo-700 px-6 py-2 shadow-lg transition rounded-full'>
               <span className='tracking-wider text-lg'>
                 詳細はこちら
               </span>
