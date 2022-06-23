@@ -1,6 +1,7 @@
 import {EndPoints} from '@/types/cmsType'
 import HtmlView from '@/components/common/htmlView'
 import ReaderLayout from '@/components/common/readerLayout'
+import SectionTitle from '@/components/common/sectionTitle'
 
 type NewsViewProps = {
   news: EndPoints['get']['news']
@@ -9,7 +10,7 @@ type NewsViewProps = {
 const NewsView = ({news}: NewsViewProps) => {
   return (
     <ReaderLayout>
-      <h2 className='text-3xl tracking-wider font-bold'>{news.title}</h2>
+      <SectionTitle>{news.title}</SectionTitle>
       <div className='mt-10 prose prose-blue max-w-none'>
         <HtmlView html={news.content} />
       </div>

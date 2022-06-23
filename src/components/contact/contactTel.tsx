@@ -1,9 +1,10 @@
 import ReaderLayout from '@/components/common/readerLayout'
+import SectionTitle from '@/components/common/sectionTitle'
 
 const ContactTel = () => {
   return (
     <ReaderLayout>
-      <h2 className='text-3xl tracking-wider font-bold tracking-wide'>お問い合わせ</h2>
+      <SectionTitle>お問い合わせ</SectionTitle>
       <p className='mt-4 tracking-wide'>
         電話でのお問い合わせの場合は、<br />
         <strong>06-6809-7520</strong> (9:30から17:00まで）
