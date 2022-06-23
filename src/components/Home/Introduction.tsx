@@ -1,6 +1,11 @@
 import Link from 'next/link'
 import {MdArrowForward} from 'react-icons/md'
 import IntroductionLottie from '@/components/Home/introductionLottie'
+import dynamic from 'next/dynamic'
+
+const MediaQuery = dynamic(() => import('react-responsive'), {
+  ssr: false
+})
 
 const Introduction = () => {
   return (
@@ -26,9 +31,11 @@ const Introduction = () => {
           </Link>
         </p>
       </div>
-      <div className='absolute right-0 top-0 bottom-0 w-1/2 hidden md:block'>
-        <IntroductionLottie />
-      </div>
+      <MediaQuery minWidth={768}>
+        <div className='absolute right-0 top-0 bottom-0 w-1/2'>
+          <IntroductionLottie />
+        </div>
+      </MediaQuery>
     </div>
   )
 }
