@@ -9,7 +9,7 @@ type NewsListProps = {
 
 const NewsList = ({items}: NewsListProps) => {
   return (
-    <div className='pb-20 grid gap-20'>
+    <div className='pt-10 md:pt-0 pb-20 grid gap-20'>
       <h3 className='text-center font-bold xl:font-black tracking-wider text-3xl'>お知らせ</h3>
       <div className='w-full'>
         <div className='max-w-screen-xl mx-auto px-2 xl:px-0'>
