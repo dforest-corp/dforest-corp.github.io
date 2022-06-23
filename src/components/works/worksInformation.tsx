@@ -10,8 +10,10 @@ type WorksInformationProps = {
 const WorksInformation = ({post}: WorksInformationProps) => {
   return (
     <ReaderLayout>
-      <SectionTitle>{post.title}</SectionTitle>
-      <Content content={post.content} />
+      <div className='grid gap-10'>
+        <SectionTitle>{post.title}</SectionTitle>
+        <Content content={post.content} />
+      </div>
     </ReaderLayout>
   )
 }

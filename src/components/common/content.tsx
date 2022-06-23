@@ -6,7 +6,7 @@ export type ContentProps = {
 
 const Content = ({content}: ContentProps) => {
   return (
-    <div className='mt-10 prose prose-blue max-w-none'>
+    <div className='prose prose-blue max-w-none'>
       <HtmlView html={content} />
     </div>
   )

@@ -10,8 +10,10 @@ export type CompanyInformationProps = {
 const CompanyInformation = ({post}: CompanyInformationProps) => {
   return (
     <ReaderLayout>
-      <SectionTitle>{post.title}</SectionTitle>
-      <Content content={post.content} />
+      <div className='grid gap-10'>
+        <SectionTitle>{post.title}</SectionTitle>
+        <Content content={post.content} />
+      </div>
     </ReaderLayout>
   )
 }

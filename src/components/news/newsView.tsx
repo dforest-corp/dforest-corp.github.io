@@ -10,8 +10,10 @@ type NewsViewProps = {
 const NewsView = ({news}: NewsViewProps) => {
   return (
     <ReaderLayout>
-      <SectionTitle>{news.title}</SectionTitle>
-      <Content content={news.content} />
+      <div className='grid gap-10'>
+        <SectionTitle>{news.title}</SectionTitle>
+        <Content content={news.content} />
+      </div>
     </ReaderLayout>
   )
 }
