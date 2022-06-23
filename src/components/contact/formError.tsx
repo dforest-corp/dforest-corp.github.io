@@ -1,15 +1,15 @@
 import {FieldError} from 'react-hook-form'
+import MayBe from '@/components/common/MayBe'
 
 export type FormErrorProps = {
   error: FieldError | undefined
 }
 
 const FormError = ({error}: FormErrorProps) => {
-  if (error === undefined) {
-    return <></>
-  }
   return (
-    <p className='text-red-500'>{error.message}</p>
+    <MayBe test={error !== undefined}>
+      <p className='text-red-500'>{error?.message}</p>
+    </MayBe>
   )
 }
 

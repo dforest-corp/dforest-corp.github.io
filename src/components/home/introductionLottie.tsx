@@ -1,6 +1,7 @@
 import Lottie, {Options} from 'react-lottie'
 import {memo, useEffect, useMemo, useState} from 'react'
 import ky from 'ky-universal'
+import MayBe from '@/components/common/MayBe'
 
 const IntroductionLottie = memo(() => {
   const [animationData, setAnimationData] = useState<any>()
@@ -18,14 +19,12 @@ const IntroductionLottie = memo(() => {
     ky.get('/lottie/intro.json').json<any>().then(setAnimationData)
   }, [])
 
-  if (animationData === undefined) {
-    return <></>
-  }
-
   return (
-    <Lottie options={defaultOptions}
-            isClickToPauseDisabled
-            style={{cursor: 'default', maxWidth: 1000}} />
+    <MayBe test={animationData !== undefined}>
+      <Lottie options={defaultOptions}
+              isClickToPauseDisabled
+              style={{cursor: 'default', maxWidth: 1000}} />
+    </MayBe>
   )
 })
 IntroductionLottie.displayName = 'IntroductionLottie'
