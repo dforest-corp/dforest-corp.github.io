@@ -12,16 +12,28 @@ on:
 
 jobs:
   build-deploy:
-    runs-on: ubuntu-20.04
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [latest]
+        node: ["16.x"]
     steps:
       - uses: actions/checkout@v2
 
       - name: Use Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '16.x'
+          node-version: ${{ matrix.node }}
+
+      - name: Cache node_modules
+        id: node_modules_cache_id
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: ${{ matrix.os }}-node-v${{ matrix.node }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
 
       - name: Install dependencies
+        if: steps.node_modules_cache_id.outputs.cache-hit != 'true'
         run: yarn install --immutable --immutable-cache --check-cache
 
       - name: Build
