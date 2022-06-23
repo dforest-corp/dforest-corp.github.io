@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import {MdArrowForward} from 'react-icons/md'
 import Image from 'next/image'
+import IntroductionLottie from '@/components/Home/introductionLottie'
 
 const Introduction = () => {
   return (
@@ -27,11 +28,7 @@ const Introduction = () => {
         </p>
       </div>
       <div className='absolute right-0 top-0 bottom-0 w-1/2 hidden md:block'>
-        <Image src='/images/p0.png'
-               alt='多様な環境のお客様に最適なITソリューションを'
-               layout='fill'
-               objectFit='contain'
-               unoptimized/>
+        <IntroductionLottie />
       </div>
     </div>
   )
