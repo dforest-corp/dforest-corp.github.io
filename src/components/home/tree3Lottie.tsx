@@ -1,11 +1,11 @@
 import {useEffect, useState} from 'react'
-import TreeLottie from '@/components/Home/treeLottie'
+import TreeLottie from '@/components/home/treeLottie'
 
-const Tree2Lottie = () => {
+const Tree3Lottie = () => {
   const [animationData, setAnimationData] = useState<any>()
 
   useEffect(() => {
-    import('@/lottie/tree2.json').then(setAnimationData)
+    import('@/lottie/tree3.json').then(setAnimationData)
   }, [])
 
   if (animationData === undefined) {
@@ -14,4 +14,4 @@ const Tree2Lottie = () => {
   return <TreeLottie animationData={animationData} />
 }
 
-export default Tree2Lottie
+export default Tree3Lottie

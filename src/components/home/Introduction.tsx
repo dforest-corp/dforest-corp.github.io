@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import {MdArrowForward} from 'react-icons/md'
-import IntroductionLottie from '@/components/Home/introductionLottie'
+import IntroductionLottie from '@/components/home/introductionLottie'
 import dynamic from 'next/dynamic'
 
 const MediaQuery = dynamic(() => import('react-responsive'), {

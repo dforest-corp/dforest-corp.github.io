@@ -3,9 +3,9 @@ import {NextSeo} from 'next-seo'
 import {getNewsIdList} from '@/api/getNewsList'
 import {EndPoints} from '@/types/cms-types'
 import {getNewsDetail} from '@/api/getNewsDetail'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
-import NewsView from '@/components/News/newsView'
+import Header from '@/components/common/Header'
+import Footer from '@/components/common/Footer'
+import NewsView from '@/components/news/newsView'
 import {sanitizePost} from '@/utils/sanitizePost'
 
 type NewsPageProps = {

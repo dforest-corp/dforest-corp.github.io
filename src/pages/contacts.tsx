@@ -1,8 +1,8 @@
 import type {NextPage} from 'next'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
-import ContactTel from '@/components/Contact/contactTel'
-import ContactForm from '@/components/Contact/contactForm'
+import Header from '@/components/common/Header'
+import Footer from '@/components/common/Footer'
+import ContactTel from '@/components/contact/contactTel'
+import ContactForm from '@/components/contact/contactForm'
 import {NextSeo} from 'next-seo'
 
 const Contacts: NextPage = () => {

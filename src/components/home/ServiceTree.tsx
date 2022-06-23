@@ -1,9 +1,9 @@
 import TreeItemRight from './TreeItemRight'
 import TreeItemLeft from './TreeItemLeft'
-import Tree1Lottie from '@/components/Home/tree1Lottie'
-import Tree2Lottie from '@/components/Home/tree2Lottie'
-import Tree3Lottie from '@/components/Home/tree3Lottie'
-import Tree4Lottie from '@/components/Home/tree4Lottie'
+import Tree1Lottie from '@/components/home/tree1Lottie'
+import Tree2Lottie from '@/components/home/tree2Lottie'
+import Tree3Lottie from '@/components/home/tree3Lottie'
+import Tree4Lottie from '@/components/home/tree4Lottie'
 
 const ServiceTree = () => {
   return (

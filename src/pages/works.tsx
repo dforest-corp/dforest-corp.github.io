@@ -1,9 +1,9 @@
 import type {GetStaticProps, NextPage} from 'next'
 import {NextSeo} from 'next-seo'
 import {EndPoints} from '@/types/cms-types'
-import Header from '@/components/Header'
-import WorksInformation from '@/components/Works/worksInformation'
-import Footer from '@/components/Footer'
+import Header from '@/components/common/Header'
+import WorksInformation from '@/components/works/worksInformation'
+import Footer from '@/components/common/Footer'
 import {getWorksPost} from '@/api/getNewsDetail'
 import {sanitizePost} from '@/utils/sanitizePost'
 

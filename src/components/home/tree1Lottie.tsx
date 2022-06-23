@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react'
-import TreeLottie from '@/components/Home/treeLottie'
+import TreeLottie from '@/components/home/treeLottie'
 
 const Tree1Lottie = () => {
   const [animationData, setAnimationData] = useState<any>()

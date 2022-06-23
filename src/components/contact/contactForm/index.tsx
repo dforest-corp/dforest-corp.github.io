@@ -1,5 +1,5 @@
-import {useContactFormHook} from '@/components/Contact/contactForm/hooks'
-import FormError from '@/components/Contact/formError'
+import {useContactFormHook} from '@/components/contact/contactForm/hooks'
+import FormError from '@/components/contact/formError'
 
 const ContactForm = () => {
   const {register, handleSubmitForm, errors} = useContactFormHook()
