@@ -31,7 +31,7 @@ const TreeLottie = memo(({animationPath}: TreeLottieProps) => {
   }), [animationData])
 
   return (
-    <div ref={ref}>
+    <div ref={ref} className={`aspect-square`}>
       <MayBe test={animationData !== undefined}>
         <Lottie options={defaultOptions}
                 isClickToPauseDisabled
