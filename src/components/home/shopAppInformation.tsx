@@ -45,8 +45,7 @@ const ShopAppInformation = () => {
       </div>
       <div className='mt-8'>
         <Link href={'/contacts'}>
-          <a target='_blank'
-             className='inline-flex flex-row items-center bg-indigo-700 hover:bg-white border border-indigo-700 text-white hover:text-indigo-700 px-6 py-2 shadow-lg transition rounded-full'>
+          <a className='inline-flex flex-row items-center bg-indigo-700 hover:bg-white border border-indigo-700 text-white hover:text-indigo-700 px-6 py-2 shadow-lg transition rounded-full'>
               <span className='tracking-wider text-lg'>
                 お問い合わせください
               </span>
