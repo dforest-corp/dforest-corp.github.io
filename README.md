@@ -2,6 +2,12 @@
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+# !!Notice!!
+
+現在は、[dforest-corp/dforest-corp-vercel](https://github.com/dforest-corp/dforest-corp-vercel)レポジトリに移動しています。
+
+このドメインは単にリダイレクトするものとなっています。
+
 ## Environments
 
 Set MICROCMS_API_KEY to .env.local.
